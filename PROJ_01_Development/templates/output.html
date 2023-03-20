@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Reguar Expression Finder</title>
+</head>
+<body bgcolor="lightblue">
+    <center>
+    <h1> <b> Regex101.com Clone </b> </h1>
+    <h2>  Hi, Ritwik this side 😊😊  </h2>
+    <form method="post">
+        <label for="pattern"> Regular Expression: </label>
+        <input type="text" name="pattern"><br><br>
+        <label for="text"> Text String Input </label>
+        <input type="text" name="text"><br><br>
+        <input type="submit" value="FIND">
+        <input type="reset" value="REFRESH">
+
+    </form>
+    <br>
+    <br>
+    {% if matches %}
+    <p>Reg Expression :- {{pattern}}</p>
+    <p>Test String :- {{text}}</p>
+    <h2>Matches: </h2>
+
+    <ul>
+        {% for match in matches %}
+        <li>{{match}}</li>
+        {% endfor %}
+        Total no matched is: {{count}}
+    </ul>
+    {% else %}
+    <p>No Matches Found</p>
+    {% endif %}
+
+</center>
+</body>
+</html>
